@@ -48,19 +48,7 @@
                         android:layout_marginTop="6dp"
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentStart="true" />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:maxLines="1"
-                        android:layout_weight="1"
-                        android:text="23/12/1992"
-                        android:textSize="12sp"
-                        android:id="@+id/note_date"
-                        android:layout_marginLeft="6dp"
-                        android:layout_marginRight="6dp"
-                        android:layout_marginTop="6dp"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true" />
+
                 </LinearLayout>
 
 

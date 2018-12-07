@@ -29,7 +29,7 @@ public abstract class notes_database extends RoomDatabase {
         @Override
         public void onCreate(@NonNull SupportSQLiteDatabase db) {
             super.onCreate(db);
-            new populateDb(notesDb);
+           // new populateDb(notesDb);
         }
     };
 

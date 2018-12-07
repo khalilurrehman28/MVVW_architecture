@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Home">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerview"
@@ -23,7 +23,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="20dp"
-        android:src="@mipmap/ic_launcher"
+        android:src="@drawable/ic_add_black_24dp"
         android:layout_marginBottom="23dp" />
 
 </RelativeLayout>
