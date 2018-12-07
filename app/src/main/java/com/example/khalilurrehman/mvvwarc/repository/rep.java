@@ -1,11 +1,11 @@
 package com.example.khalilurrehman.mvvwarc.repository;
 
 import android.app.Application;
-import android.arch.lifecycle.LiveData;
-import android.arch.persistence.db.SupportSQLiteDatabase;
-import android.arch.persistence.room.RoomDatabase;
+import androidx.lifecycle.LiveData;
+import androidx.sqlite.db.SupportSQLiteDatabase;
+import androidx.room.RoomDatabase;
 import android.os.AsyncTask;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.example.khalilurrehman.mvvwarc.DAO.notes_dao;
 import com.example.khalilurrehman.mvvwarc.database.notes_database;

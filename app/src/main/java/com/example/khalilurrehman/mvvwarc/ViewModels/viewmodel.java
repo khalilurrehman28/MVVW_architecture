@@ -1,8 +1,8 @@
 package com.example.khalilurrehman.mvvwarc.ViewModels;
 
 import android.app.Application;
-import android.arch.lifecycle.AndroidViewModel;
-import android.arch.lifecycle.LiveData;
+import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LiveData;
 
 import com.example.khalilurrehman.mvvwarc.repository.rep;
 import com.example.khalilurrehman.mvvwarc.tables.notes;
