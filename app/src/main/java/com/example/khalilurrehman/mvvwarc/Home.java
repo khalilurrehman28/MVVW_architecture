@@ -38,7 +38,7 @@ public class Home extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        notesAdapter = new getNotesAdapter(this);
+        notesAdapter = new getNotesAdapter();
         floatingActionButton = findViewById(R.id.fab);
 
         recyclerView = findViewById(R.id.recyclerview);
@@ -51,7 +51,7 @@ public class Home extends BaseActivity {
         vm.getListLiveData().observe(this, new Observer<List<notes>>() {
             @Override
             public void onChanged(@Nullable List<notes> notes) {
-                notesAdapter.setList(notes);
+                notesAdapter.submitList(notes);
             }
         });
 

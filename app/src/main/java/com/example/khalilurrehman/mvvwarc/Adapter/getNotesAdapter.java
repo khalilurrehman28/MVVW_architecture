@@ -2,6 +2,8 @@ package com.example.khalilurrehman.mvvwarc.Adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v7.recyclerview.extensions.ListAdapter;
+import android.support.v7.util.DiffUtil;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -20,12 +22,26 @@ import java.util.List;
  * Created by mandeep on 4/9/17.
  */
 
-public class getNotesAdapter extends RecyclerView.Adapter<getNotesAdapter.MyViewHolder> {
-    private Context mContext;
-    private List<notes> notelist=new ArrayList<>();
+public class getNotesAdapter extends ListAdapter<notes,getNotesAdapter.MyViewHolder> {
+
+    public getNotesAdapter() {
+        super(diffCallback);
+    }
+
+    public static final DiffUtil.ItemCallback<notes> diffCallback = new DiffUtil.ItemCallback<notes>() {
+        @Override
+        public boolean areItemsTheSame(@NonNull notes old, @NonNull notes newItem) {
+            return old.getId()==newItem.getId();
+        }
+
+        @Override
+        public boolean areContentsTheSame(@NonNull notes old, @NonNull notes newItem) {
+            return old.getId()==newItem.getId() &&  old.getTitle().equals(newItem.getTitle()) && old.getText().equals(newItem.getText());
+        }
+    };
 
     public notes getItemAtPosition(int adapterPosition) {
-        return notelist.get(adapterPosition);
+        return getItem(adapterPosition);
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder  {
@@ -44,15 +60,6 @@ public class getNotesAdapter extends RecyclerView.Adapter<getNotesAdapter.MyView
     }
 
 
-    public getNotesAdapter(Context mContext) {
-        this.mContext = mContext;
-    }
-
-    public void setList(List<notes> notes){
-        this.notelist = notes;
-        notifyDataSetChanged();
-    }
-
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -62,16 +69,10 @@ public class getNotesAdapter extends RecyclerView.Adapter<getNotesAdapter.MyView
 
     @Override
     public void onBindViewHolder(@NonNull final MyViewHolder holder, int position) {
-        notes notesData = notelist.get(position);
+        notes notesData = getItem(position);
         holder.note_title.setText(notesData.getTitle());
         holder.note_text.setText(notesData.getText());
 
     }
-
-    @Override
-    public int getItemCount() {
-        return notelist.size();
-    }
-
 
 }
